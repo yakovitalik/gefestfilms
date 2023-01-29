@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Данные о фильме</title>
+</head>
+<body>
+
+<p th:text="${'ID: ' + film.getId()}">VALUE</p>
+<p th:text="${'Название: ' + film.getTitle()}">VALUE</p>
+<p th:text="${'Год: ' + film.getYear()}">VALUE</p>
+<p th:text="${'Жанр: ' + film.getGenre()}">VALUE</p>
+<p th:text="${'Страна: ' + film.getCountry()}">VALUE</p>
+<p th:text="${'Режиссер: ' + film.getDirector()}">VALUE</p>
+<p th:text="${'Длительность ' + film.getDuration()}">VALUE</p>
+<p th:text="${'Описание: ' + film.getDescription()}">VALUE</p>
+<p th:text="${'Путь к обложке: ' + film.getCoverPath()}">VALUE</p>
+<p th:text="${'Путь к файлу: ' + film.getFilePath()}">VALUE</p>
+
+<br/>
+
+<a th:href="@{/admin/{id}/edit(id=${film.getId()})}">Редактировать</a>
+
+<br/>
+<form th:method="DELETE" th:action="@{/admin/{id}(id=${film.getId()})}">
+    <input type="submit" value="Удалить"/>
+</form>
+
+
+</body>
+</html>
