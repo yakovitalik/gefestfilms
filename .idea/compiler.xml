@@ -6,8 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="spring-mvc-gefestfilms" />
-      </profile>
+        <module name="gefestfilms" />
+       </profile>
     </annotationProcessing>
   </component>
 </project>
