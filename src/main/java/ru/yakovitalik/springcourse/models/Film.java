@@ -1,21 +1,49 @@
 package ru.yakovitalik.springcourse.models;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
+
 public class Film {
+    // в поля добавлены валидация форм в соответствии с ячейками базы данных
     private int id;             // id фильма, генерируется в БД
+
+    @NotEmpty(message = "Название фильма не может быть пустым!")
+    @Size(min = 1, max = 150, message = "Название фильма должно быть от 1 до 150 символов!")
     private String title;       // название фильма
+
+    @NotEmpty(message = "Жанр не может быть пустым!")
+    @Size(min = 1, max = 40, message = "Жанр должен быть от 1 до 40 символов!")
     private String genre;       // жанр
+
+    @NotEmpty(message = "Страна не может быть пустой!")
+    @Size(min = 1, max = 70, message = "Страна должна быть от 1 до 70 символов!")
     private String country;     // страна
+
+    @Min(value = 1900, message = "Фильм не может быть раньше 1900 года!")
     private int year;           // год выхода фильма
+
+    @NotEmpty(message = "Фильм не может быть без режиссера!")
+    @Size(min = 1, max = 40, message = "Имя режиссера должно быть от 1 до 40 символов!")
     private String director;    // режиссер
+
+    @NotEmpty(message = "Длительность фильма должна быть указана!")
+    @Size(min = 1, max = 20, message = "Длительность фильма должна быть от 1 до 20 символов!")
     private String duration;    // длительность фильма (1ч 23мин)
+
+    @NotEmpty(message = "Фильм должен иметь описание сюжета!")
     private String description; // описание фильма (текст, о чем фильм)
+
+    @NotEmpty(message = "У фильма должна быть обложка. Укажите путь к ней!")
     private String coverPath;   // путь к изображению-обложке фильма
+
+    @NotEmpty(message = "Фильм должен быть добавлен. Укажите путь к файлу с фильмом!")
     private String filePath;    // путь к самому видео с фильмом для воспроизведения
 
-    public Film() {
+    // конструктор по умолчанию для создания бина спрингом
+    public Film() {  }
 
-    }
-
+    // конструктор с параметрами
     public Film(int id, String title, String genre, String country,
                 int year, String director, String duration, String description,
                 String coverPath, String filePath) {
@@ -31,6 +59,7 @@ public class Film {
         this.filePath = filePath;
     }
 
+    // гетеры и сеттеры для полей
     public int getId() {
         return id;
     }
