@@ -27,6 +27,10 @@ public class Film {
     @Size(min = 1, max = 40, message = "Имя режиссера должно быть от 1 до 40 символов!")
     private String director;    // режиссер
 
+    @NotEmpty(message = "Фильм не может быть без актеров!")
+    @Size(min = 1, max = 600, message = "Список актеров должен быть от 1 до 600 символов!")
+    private String actors;    // актеры
+
     @NotEmpty(message = "Длительность фильма должна быть указана!")
     @Size(min = 1, max = 20, message = "Длительность фильма должна быть от 1 до 20 символов!")
     private String duration;    // длительность фильма (1ч 23мин)
@@ -45,7 +49,7 @@ public class Film {
 
     // конструктор с параметрами
     public Film(int id, String title, String genre, String country,
-                int year, String director, String duration, String description,
+                int year, String director, String actors, String duration, String description,
                 String cover, String file) {
         this.id = id;
         this.title = title;
@@ -53,6 +57,7 @@ public class Film {
         this.country = country;
         this.year = year;
         this.director = director;
+        this.actors = actors;
         this.duration = duration;
         this.description = description;
         this.cover = cover;
@@ -106,6 +111,14 @@ public class Film {
 
     public void setDirector(String director) {
         this.director = director;
+    }
+
+    public String getActors() {
+        return actors;
+    }
+
+    public void setActors(String actors) {
+        this.actors = actors;
     }
 
     public String getDuration() {

@@ -27,6 +27,10 @@
     <input type="text" th:field="*{director}" id="director"/>
     <div style="color:red" th:if="${#fields.hasErrors('director')}" th:errors="*{director}">Director error</div>
     <br/>
+    <label for="actors">Введите актеров: </label>
+    <input type="text" th:field="*{actors}" id="actors"/>
+    <div style="color:red" th:if="${#fields.hasErrors('actors')}" th:errors="*{actors}">Actors error</div>
+    <br/>
     <label for="duration">Введите длительность: </label>
     <input type="text" th:field="*{duration}" id="duration"/>
     <div style="color:red" th:if="${#fields.hasErrors('duration')}" th:errors="*{duration}">Duration error</div>

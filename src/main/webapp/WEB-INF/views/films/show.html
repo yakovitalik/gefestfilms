@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://thymeleaf.org">
+<html lang="ru" xmlns:th="http://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Информация о фильме</title>
@@ -11,6 +11,7 @@
 <p th:text="${'Жанр: ' + film.getGenre()}">VALUE</p>
 <p th:text="${'Страна: ' + film.getCountry()}">VALUE</p>
 <p th:text="${'Режиссер: ' + film.getDirector()}">VALUE</p>
+<p th:text="${'В ролях: ' + film.getActors()}">VALUE</p>
 <p th:text="${'Длительность: ' + film.getDuration()}">VALUE</p>
 <p th:text="${'Описание: ' + film.getDescription()}">VALUE</p>
 
