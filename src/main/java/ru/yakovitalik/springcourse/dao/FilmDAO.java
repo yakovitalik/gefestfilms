@@ -27,16 +27,16 @@ public class FilmDAO {
     }
 
     public void save(Film film) {
-        jdbcTemplate.update("INSERT INTO film(title, genre, country, year, director, duration, description, path_cover, path_file)" +
+        jdbcTemplate.update("INSERT INTO film(title, genre, country, year, director, duration, description, cover, file)" +
                         " VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)", film.getTitle(), film.getGenre(), film.getCountry(), film.getYear(),
-                film.getDirector(), film.getDuration(), film.getDescription(), film.getCoverPath(), film.getFilePath());
+                film.getDirector(), film.getDuration(), film.getDescription(), film.getCover(), film.getFile());
     }
 
     public void update(int id, Film updateFilm) {
         jdbcTemplate.update("UPDATE film SET title=?, genre=?, country=?, year=?, director=?, duration=?," +
-                        " description=?, path_cover=?, path_file=? WHERE id=?", updateFilm.getTitle(),
+                        " description=?, cover=?, file=? WHERE id=?", updateFilm.getTitle(),
                 updateFilm.getGenre(), updateFilm.getCountry(), updateFilm.getYear(), updateFilm.getDirector(),
-                updateFilm.getDuration(), updateFilm.getDescription(), updateFilm.getCoverPath(), updateFilm.getFilePath(), id);
+                updateFilm.getDuration(), updateFilm.getDescription(), updateFilm.getCover(), updateFilm.getFile(), id);
     }
 
     public void delete(int id) {

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://thymeleaf.org">
+<html lang="ru" xmlns:th="http://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Добавление фильма</title>
@@ -35,13 +35,13 @@
     <input type="text" th:field="*{description}" id="description"/>
     <div style="color:red" th:if="${#fields.hasErrors('description')}" th:errors="*{description}">Description error</div>
     <br/>
-    <label for="coverPath">Введите путь к обложке: </label>
-    <input type="text" th:field="*{coverPath}" id="coverPath"/>
-    <div style="color:red" th:if="${#fields.hasErrors('coverPath')}" th:errors="*{coverPath}">Path_cover error</div>
+    <label for="cover">Введите путь к обложке: </label>
+    <input type="text" th:field="*{cover}" id="cover"/>
+    <div style="color:red" th:if="${#fields.hasErrors('cover')}" th:errors="*{cover}">Cover error</div>
     <br/>
-    <label for="filePath">Введите путь к файлу: </label>
-    <input type="text" th:field="*{filePath}" id="filePath"/>
-    <div style="color:red" th:if="${#fields.hasErrors('filePath')}" th:errors="*{filePath}">Path_file error</div>
+    <label for="file">Введите путь к файлу: </label>
+    <input type="text" th:field="*{file}" id="file"/>
+    <div style="color:red" th:if="${#fields.hasErrors('file')}" th:errors="*{file}">File error</div>
     <br/>
     <input type="submit" value="Создать"/>
 </form>

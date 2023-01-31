@@ -35,10 +35,10 @@ public class Film {
     private String description; // описание фильма (текст, о чем фильм)
 
     @NotEmpty(message = "У фильма должна быть обложка. Укажите путь к ней!")
-    private String coverPath;   // путь к изображению-обложке фильма
+    private String cover;   // путь к изображению-обложке фильма
 
     @NotEmpty(message = "Фильм должен быть добавлен. Укажите путь к файлу с фильмом!")
-    private String filePath;    // путь к самому видео с фильмом для воспроизведения
+    private String file;    // путь к самому видео с фильмом для воспроизведения
 
     // конструктор по умолчанию для создания бина спрингом
     public Film() {  }
@@ -46,7 +46,7 @@ public class Film {
     // конструктор с параметрами
     public Film(int id, String title, String genre, String country,
                 int year, String director, String duration, String description,
-                String coverPath, String filePath) {
+                String cover, String file) {
         this.id = id;
         this.title = title;
         this.genre = genre;
@@ -55,8 +55,8 @@ public class Film {
         this.director = director;
         this.duration = duration;
         this.description = description;
-        this.coverPath = coverPath;
-        this.filePath = filePath;
+        this.cover = cover;
+        this.file = file;
     }
 
     // гетеры и сеттеры для полей
@@ -124,19 +124,19 @@ public class Film {
         this.description = description;
     }
 
-    public String getCoverPath() {
-        return coverPath;
+    public String getCover() {
+        return cover;
     }
 
-    public void setCoverRuth(String coverPath) {
-        this.coverPath = coverPath;
+    public void setCover(String cover) {
+        this.cover = cover;
     }
 
-    public String getFilePath() {
-        return filePath;
+    public String getFile() {
+        return file;
     }
 
-    public void setFilePath(String filePath) {
-        this.filePath = filePath;
+    public void setFile(String file) {
+        this.file = file;
     }
 }
