@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<form th:method="POST" th:action="@{/films}" th:object="${film}">
+<form th:method="POST" th:action="@{/admin}" th:object="${film}">
     <label for="title">Введите название: </label>
     <input type="text" th:field="*{title}" id="title"/>
     <div style="color:red" th:if="${#fields.hasErrors('title')}" th:errors="*{title}">Title error</div>
