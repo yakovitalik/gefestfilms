@@ -3,7 +3,7 @@
 ## About program
 *****************************
 This is the backend part of the cinema portal. 
-The application is written in Java in the Spring MVC framework.
+The application is written in Java (JDK 17) in the Spring MVC framework.
 This is a full-fledged CRUD application.
 
 I use JDBC template to work with the database (I write SQL queries in the code).
