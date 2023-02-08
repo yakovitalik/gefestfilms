@@ -21,8 +21,11 @@ To use the application, you must have installed databases PostgreSQL,
 Apache Tomcat  (version 8 or 9 is recommended).
 The program runs as a war application.
 
+You also need to add your data to the database.properties file.
+Use the sql.txt file to create tables in the database.
+
 *****************************
-What does this app
+## What does this app
 *****************************
 This program manages the server part of the movie portal. 
 It writes and reads information from the database and passes it to the HTML view.
